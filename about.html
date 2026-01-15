@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>About • PLACEHOLDER BARBER LOUNGE</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header>
+  <div class="container header-inner">
+    <div class="brand">
+      <div class="name">PLACEHOLDER BARBER LOUNGE</div>
+      <div class="sub">Luxury Cuts • City, State</div>
+    </div>
+    <button class="menu-btn" id="menuBtn" onclick="toggleMenu()">Menu</button>
+    <nav id="siteNav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="about.html">About</a>
+      <a href="book.html">Book</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section>
+    <div class="container">
+      <div class="kicker">About</div>
+      <h1>The Story</h1>
+
+      <div class="grid-2" style="margin-top:16px;">
+        <div class="card pad">
+          <h2>Built on craft.</h2>
+          <p class="small">
+            Placeholder Barber Lounge is designed for clients who want a clean experience:
+            easy booking, on-time appointments, and a sharp finish every time.
+          </p>
+          <ul class="list">
+            <li>Consultation-first approach</li>
+            <li>Clean blends + lineups</li>
+            <li>Quality over shortcuts</li>
+          </ul>
+        </div>
+
+        <div class="card pad">
+          <h2>Visit Us</h2>
+          <p class="small">
+            123 Luxury Ave, Suite 100<br>
+            City, ST 00000
+          </p>
+          <div class="actions" style="margin-top:10px;">
+            <a class="btn" href="tel:+13165551234">Call</a>
+            <button class="btn primary" onclick="openDirections('123 Luxury Ave, Suite 100, City, ST')">Get Directions</button>
+          </div>
+
+          <div class="hr"></div>
+          <h3>Hours</h3>
+          <p class="small">
+            Mon–Thu: 9am – 6pm<br>
+            Fri: 9am – 7pm<br>
+            Sat: 9am – 5pm<br>
+            Sun: Closed
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- MAP MODAL -->
+<div class="modal-backdrop" id="mapModalBackdrop" onclick="if(event.target.id==='mapModalBackdrop') closeDirections()">
+  <div class="modal" role="dialog" aria-modal="true" aria-label="Open directions">
+    <div class="kicker">Directions</div>
+    <h3>Open in Maps</h3>
+    <div class="small">Choose your preferred maps app.</div>
+    <div class="row">
+      <a class="btn primary" id="appleMapsLink" target="_blank" rel="noopener">Apple Maps</a>
+      <a class="btn" id="googleMapsLink" target="_blank" rel="noopener">Google Maps</a>
+    </div>
+    <div class="close-row">
+      <button class="x" onclick="closeDirections()">Close</button>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
