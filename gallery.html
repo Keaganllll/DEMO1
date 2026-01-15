@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Gallery • PLACEHOLDER BARBER LOUNGE</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<header>
+  <div class="container header-inner">
+    <div class="brand">
+      <div class="name">PLACEHOLDER BARBER LOUNGE</div>
+      <div class="sub">Luxury Cuts • City, State</div>
+    </div>
+    <button class="menu-btn" id="menuBtn" onclick="toggleMenu()">Menu</button>
+    <nav id="siteNav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="about.html">About</a>
+      <a href="book.html">Book</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section>
+    <div class="container">
+      <div class="kicker">Gallery</div>
+      <h1>Featured Work</h1>
+      <p class="small">Demo photos for layout — swap with real cuts later.</p>
+
+      <div class="grid-3" style="margin-top:16px;">
+        <div class="card"><img alt="Cut 1" src="https://images.unsplash.com/photo-1517832207067-4db24a2ae47c?auto=format&fit=crop&w=1400&q=80"></div>
+        <div class="card"><img alt="Cut 2" src="https://images.unsplash.com/photo-1520975661595-6453be3f7070?auto=format&fit=crop&w=1400&q=80"></div>
+        <div class="card"><img alt="Cut 3" src="https://images.unsplash.com/photo-1519415943484-9fa1873496d4?auto=format&fit=crop&w=1400&q=80"></div>
+        <div class="card"><img alt="Cut 4" src="https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?auto=format&fit=crop&w=1400&q=80"></div>
+        <div class="card"><img alt="Cut 5" src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?auto=format&fit=crop&w=1400&q=80"></div>
+        <div class="card"><img alt="Cut 6" src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1400&q=80"></div>
+      </div>
+
+      <div style="margin-top:16px;">
+        <a class="btn primary" href="book.html">Book Your Slot</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- MAP MODAL -->
+<div class="modal-backdrop" id="mapModalBackdrop" onclick="if(event.target.id==='mapModalBackdrop') closeDirections()">
+  <div class="modal" role="dialog" aria-modal="true" aria-label="Open directions">
+    <div class="kicker">Directions</div>
+    <h3>Open in Maps</h3>
+    <div class="small">Choose your preferred maps app.</div>
+    <div class="row">
+      <a class="btn primary" id="appleMapsLink" target="_blank" rel="noopener">Apple Maps</a>
+      <a class="btn" id="googleMapsLink" target="_blank" rel="noopener">Google Maps</a>
+    </div>
+    <div class="close-row">
+      <button class="x" onclick="closeDirections()">Close</button>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
