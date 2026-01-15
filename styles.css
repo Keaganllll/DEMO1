@@ -453,4 +453,75 @@ footer{
     width: 100%;
     justify-content: center;
   }
+   /* ===== Make HERO not boxy (paste at VERY bottom) ===== */
+
+/* This targets YOUR exact hero wrapper from the screenshot */
+.hero .card.hero-left.hero-overlay{
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+/* Make the headline + text sit clean on the background */
+.hero h1{
+  text-shadow: 0 10px 30px rgba(0,0,0,.55);
+}
+
+.hero .lead{
+  color: rgba(255,255,255,.78);
+  text-shadow: 0 8px 24px rgba(0,0,0,.45);
+  max-width: 60ch;
+}
+
+/* Your buttons container is .actions in the screenshot */
+.hero .actions{
+  margin-top: 18px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* Button styles (works with .btn, .btn.primary, .btn.ghost) */
+.hero .btn{
+  border-radius: 999px !important;
+  padding: 12px 18px !important;
+  border: 1px solid rgba(255,255,255,.22) !important;
+  background: rgba(0,0,0,.18) !important;
+  box-shadow: none !important;
+  backdrop-filter: blur(10px);
+}
+
+.hero .btn:hover{
+  background: rgba(255,255,255,.10) !important;
+  border-color: rgba(255,255,255,.30) !important;
+  transform: translateY(-1px);
+}
+
+.hero .btn.primary{
+  background: rgba(255,255,255,.92) !important;
+  color: #000 !important;
+  border-color: rgba(255,255,255,.40) !important;
+}
+
+.hero .btn.primary:hover{
+  background: #fff !important;
+}
+
+/* Your “chips” are .badge-row and .badge in the screenshot */
+.hero .badge-row{
+  margin-top: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.hero .badge{
+  background: rgba(0,0,0,.16) !important;
+  border: 1px solid rgba(255,255,255,.14) !important;
+  border-radius: 999px !important;
+  padding: 8px 12px !important;
+  box-shadow: none !important;
+  color: rgba(255,255,255,.85) !important;
+}
 }
