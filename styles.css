@@ -421,3 +421,67 @@ footer{
   font-family: "Montserrat", system-ui, sans-serif;
   font-weight: 300;
 }
+/* =========================
+   HERO BUTTONS (clean gray)
+   ========================= */
+
+.hero .hero-links{
+  justify-content: center;   /* keeps them centered */
+  gap: 18px;                 /* spacing between buttons */
+  margin-top: 22px;
+}
+
+/* Turn hero links into clean gray buttons */
+.hero .hero-links a,
+.hero .hero-links button{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 14px 22px;
+  border-radius: 14px;
+
+  background: rgba(255,255,255,0.10); /* gray glass */
+  border: 1px solid rgba(255,255,255,0.18);
+
+  color: rgba(255,255,255,0.90);
+  font-size: 1.05rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 400;
+
+  box-shadow: 0 18px 55px rgba(0,0,0,0.35);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  transition: transform .15s ease, background .15s ease, border-color .15s ease;
+}
+
+/* Hover: slightly brighter, tiny lift */
+.hero .hero-links a:hover,
+.hero .hero-links button:hover{
+  transform: translateY(-1px);
+  background: rgba(255,255,255,0.14);
+  border-color: rgba(255,255,255,0.28);
+}
+
+/* Remove the old underline animation if you still have it */
+.hero .hero-links a::after,
+.hero .hero-links button::after{
+  display:none !important;
+}
+
+/* Mobile: buttons stack and fill nicely */
+@media (max-width: 700px){
+  .hero .hero-links{
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+  .hero .hero-links a,
+  .hero .hero-links button{
+    width: 100%;
+    max-width: 360px;
+  }
+}
