@@ -1,10 +1,10 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Contact • PLACEHOLDER BARBER LOUNGE</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact • Placeholder Barber Lounge</title>
+  <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
 
@@ -12,10 +12,14 @@
   <div class="container header-inner">
     <div class="brand">
       <div class="name">PLACEHOLDER BARBER LOUNGE</div>
-      <div class="sub">Luxury Cuts • City, State</div>
+      <div class="tag">Luxury Cuts • City, State</div>
     </div>
-    <button class="menu-btn" id="menuBtn" onclick="toggleMenu()">Menu</button>
-    <nav id="siteNav" aria-label="Primary">
+
+    <button class="menu-btn" id="menuBtn" type="button" aria-label="Open menu">
+      ☰ <span>Menu</span>
+    </button>
+
+    <nav id="nav">
       <a href="index.html">Home</a>
       <a href="services.html">Services</a>
       <a href="gallery.html">Gallery</a>
@@ -27,64 +31,98 @@
 </header>
 
 <main>
-  <section>
+  <section class="page-title">
     <div class="container">
-      <div class="kicker">Contact</div>
-      <h1>Say Hello</h1>
+      <h1>Contact</h1>
+      <p>Quick ways to reach us. Replace placeholders with real info when you personalize it.</p>
+    </div>
+  </section>
 
-      <div class="grid-2" style="margin-top:16px;">
-        <div class="card pad">
-          <h3>Phone</h3>
-          <p class="small">(316) 555-1234</p>
-          <div class="actions" style="margin-top:10px;">
-            <a class="btn primary" href="tel:+13165551234">Call Now</a>
-            <a class="btn" href="book.html">Book</a>
-          </div>
+  <section class="section small">
+    <div class="container">
 
-          <div class="hr"></div>
-          <h3>Address</h3>
-          <p class="small">123 Luxury Ave, Suite 100<br>City, ST 00000</p>
-
-          <div class="actions" style="margin-top:10px;">
-            <button class="btn primary" onclick="openDirections('123 Luxury Ave, Suite 100, City, ST')">Get Directions</button>
-          </div>
+      <div class="grid-3">
+        <div class="card">
+          <h3>Call</h3>
+          <p>Fastest way to get an answer.</p>
+          <p style="margin-top:10px; color:rgba(255,255,255,.9)">(316) 555-1234</p>
+          <p style="margin-top:12px;">
+            <a class="btn-solid" href="tel:+13165551234">Call Now</a>
+          </p>
         </div>
 
-        <div class="card pad">
-          <h3>Quick Message</h3>
-          <p class="small">
-            Demo form (replace later with Formspree / Netlify Forms).
+        <div class="card">
+          <h3>Directions</h3>
+          <p>Tap to open Apple Maps or Google Maps.</p>
+          <p style="margin-top:10px; color:rgba(255,255,255,.85)">
+            123 Luxury Ave, Suite 100<br/>City, ST
           </p>
-          <div class="hr"></div>
-          <p class="small">
-            For now, just link them to Instagram or email:
+          <p style="margin-top:12px;">
+            <button class="btn-solid" type="button"
+              onclick="openDirections('123 Luxury Ave, Suite 100, City, ST')">
+              Get Directions
+            </button>
           </p>
-          <div class="actions" style="margin-top:10px;">
-            <a class="btn" target="_blank" rel="noopener" href="https://instagram.com/">Instagram</a>
-            <a class="btn" href="mailto:hello@yourdomain.com">Email</a>
-          </div>
+        </div>
+
+        <div class="card">
+          <h3>Book</h3>
+          <p>Book online in seconds.</p>
+          <p style="margin-top:12px;">
+            <a class="btn-solid" href="book.html">Book Appointment</a>
+          </p>
         </div>
       </div>
+
+      <div style="height:18px"></div>
+
+      <div class="card">
+        <h3>Send a message</h3>
+        <p style="margin-bottom:12px;">
+          This is a demo form layout. Later, you can connect it to Formspree or another form service.
+        </p>
+
+        <form class="form" onsubmit="event.preventDefault(); alert('Demo form — connect this later if you want.');">
+          <input class="input" type="text" placeholder="Your name" required />
+          <input class="input" type="email" placeholder="Your email" required />
+          <textarea class="input" placeholder="Message" required></textarea>
+          <button class="btn-solid" type="submit">Send</button>
+        </form>
+      </div>
+
     </div>
   </section>
 </main>
 
-<!-- MAP MODAL -->
-<div class="modal-backdrop" id="mapModalBackdrop" onclick="if(event.target.id==='mapModalBackdrop') closeDirections()">
-  <div class="modal" role="dialog" aria-modal="true" aria-label="Open directions">
-    <div class="kicker">Directions</div>
-    <h3>Open in Maps</h3>
-    <div class="small">Choose your preferred maps app.</div>
-    <div class="row">
-      <a class="btn primary" id="appleMapsLink" target="_blank" rel="noopener">Apple Maps</a>
-      <a class="btn" id="googleMapsLink" target="_blank" rel="noopener">Google Maps</a>
-    </div>
-    <div class="close-row">
-      <button class="x" onclick="closeDirections()">Close</button>
+<footer>
+  <div class="container footer-row">
+    <div>© <span id="y"></span> Placeholder Barber Lounge</div>
+    <div class="footer-links">
+      <a href="book.html">Book</a>
+      <a href="contact.html">Contact</a>
     </div>
   </div>
-</div>
+</footer>
 
-<script src="script.js"></script>
+<script>
+  document.getElementById("y").textContent = new Date().getFullYear();
+
+  // mobile menu
+  const btn = document.getElementById("menuBtn");
+  const nav = document.getElementById("nav");
+  btn.addEventListener("click", () => nav.classList.toggle("open"));
+
+  // Directions: Apple Maps on iPhone/iPad, Google Maps otherwise
+  function openDirections(address){
+    const encoded = encodeURIComponent(address);
+    const isApple = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+    if(isApple){
+      window.location.href = `maps://?q=${encoded}`;
+    } else {
+      window.open(`https://www.google.com/maps/search/?api=1&query=${encoded}`, "_blank");
+    }
+  }
+</script>
+
 </body>
 </html>
