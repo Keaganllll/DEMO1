@@ -723,7 +723,6 @@ nav a:hover{
   border: 1px solid rgba(255,255,255,0.28);
   color: rgba(255,255,255,0.92);
   text-decoration: none;
-  text-transform: lowercase;
   letter-spacing: 0.10em;
   border-radius: 2px;
   backdrop-filter: blur(6px);
