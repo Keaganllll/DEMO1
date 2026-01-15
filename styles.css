@@ -766,3 +766,50 @@ footer{
   margin-bottom: 24px;
   color: #ffffff;
 }
+/* ===== HERO ACTION LINKS ===== */
+.hero .actions {
+  display: flex;
+  gap: 48px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
+.hero .actions a,
+.hero .actions button {
+  background: none !important;
+  border: none !important;
+  padding: 0 !important;
+  font-size: 1.1rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.85);
+  font-weight: 300;
+  cursor: pointer;
+  position: relative;
+}
+
+/* underline animation */
+.hero .actions a::after,
+.hero .actions button::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 1px;
+  background: white;
+  transition: width 0.3s ease;
+}
+
+.hero .actions a:hover::after,
+.hero .actions button:hover::after {
+  width: 100%;
+}
+.badge-row {
+  display: none !important;
+}
+.hero-center {
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+}
