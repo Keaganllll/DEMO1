@@ -639,3 +639,16 @@ footer{
   letter-spacing: 0.04em;
   font-weight: 600;
 }
+/* PrimeTime-style hero headline (lighter + spaced) */
+.hero h1{
+  font-weight: 300 !important;
+  letter-spacing: 0.18em !important;
+  text-transform: uppercase;
+  line-height: 1.15;
+}
+@media (max-width: 768px){
+  .hero h1{
+    letter-spacing: 0.12em !important;
+    font-size: 1.9rem;
+  }
+}
