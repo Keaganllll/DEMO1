@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Page not found</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <header>
+    <div class="container header-inner">
+      <div class="brand">
+        <div class="name">PLACEHOLDER BARBER LOUNGE</div>
+        <div class="tag">Luxury Cuts • City, State</div>
+      </div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="about.html">About</a>
+        <a href="book.html">Book</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container">
+      <div class="kicker">Error</div>
+      <h1 style="margin-top:10px; letter-spacing:.08em; text-transform:uppercase;">Page not found</h1>
+      <p style="margin-top:12px; color:rgba(255,255,255,.7);">
+        That link doesn’t exist. Go back to the homepage.
+      </p>
+      <p style="margin-top:18px;">
+        <a class="btn-solid" href="index.html">Back Home</a>
+      </p>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container footer-row">
+      <div>© <span id="y"></span> Placeholder Barber Lounge</div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
