@@ -1,10 +1,10 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>About • PLACEHOLDER BARBER LOUNGE</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About • Placeholder Barber Lounge</title>
+  <link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
 
@@ -12,10 +12,10 @@
   <div class="container header-inner">
     <div class="brand">
       <div class="name">PLACEHOLDER BARBER LOUNGE</div>
-      <div class="sub">Luxury Cuts • City, State</div>
+      <div class="tag">Luxury Cuts • City, State</div>
     </div>
-    <button class="menu-btn" id="menuBtn" onclick="toggleMenu()">Menu</button>
-    <nav id="siteNav" aria-label="Primary">
+    <button class="menu-btn" id="menuBtn" type="button">☰ <span>Menu</span></button>
+    <nav id="nav">
       <a href="index.html">Home</a>
       <a href="services.html">Services</a>
       <a href="gallery.html">Gallery</a>
@@ -27,66 +27,59 @@
 </header>
 
 <main>
-  <section>
+  <section class="page-title">
     <div class="container">
-      <div class="kicker">About</div>
-      <h1>The Story</h1>
+      <h1>About</h1>
+      <p>A clean, luxury barbershop experience built around consistency.</p>
+    </div>
+  </section>
 
-      <div class="grid-2" style="margin-top:16px;">
-        <div class="card pad">
-          <h2>Built on craft.</h2>
-          <p class="small">
-            Placeholder Barber Lounge is designed for clients who want a clean experience:
-            easy booking, on-time appointments, and a sharp finish every time.
-          </p>
-          <ul class="list">
-            <li>Consultation-first approach</li>
-            <li>Clean blends + lineups</li>
-            <li>Quality over shortcuts</li>
-          </ul>
-        </div>
+  <section class="section small">
+    <div class="container">
+      <div class="card">
+        <h3>Our story</h3>
+        <p>
+          Replace this text with the shop’s real story: who started it, what style you specialize in,
+          and what makes your service different.
+        </p>
 
-        <div class="card pad">
-          <h2>Visit Us</h2>
-          <p class="small">
-            123 Luxury Ave, Suite 100<br>
-            City, ST 00000
-          </p>
-          <div class="actions" style="margin-top:10px;">
-            <a class="btn" href="tel:+13165551234">Call</a>
-            <button class="btn primary" onclick="openDirections('123 Luxury Ave, Suite 100, City, ST')">Get Directions</button>
-          </div>
+        <div style="height:14px"></div>
 
-          <div class="hr"></div>
-          <h3>Hours</h3>
-          <p class="small">
-            Mon–Thu: 9am – 6pm<br>
-            Fri: 9am – 7pm<br>
-            Sat: 9am – 5pm<br>
-            Sun: Closed
-          </p>
+        <div class="hero-links" style="margin-top:0">
+          <a href="book.html">Book Appointment</a>
+          <a href="contact.html">Call</a>
+          <button type="button" onclick="openDirections('123 Luxury Ave, Suite 100, City, ST')">Get Directions</button>
         </div>
       </div>
     </div>
   </section>
 </main>
 
-<!-- MAP MODAL -->
-<div class="modal-backdrop" id="mapModalBackdrop" onclick="if(event.target.id==='mapModalBackdrop') closeDirections()">
-  <div class="modal" role="dialog" aria-modal="true" aria-label="Open directions">
-    <div class="kicker">Directions</div>
-    <h3>Open in Maps</h3>
-    <div class="small">Choose your preferred maps app.</div>
-    <div class="row">
-      <a class="btn primary" id="appleMapsLink" target="_blank" rel="noopener">Apple Maps</a>
-      <a class="btn" id="googleMapsLink" target="_blank" rel="noopener">Google Maps</a>
-    </div>
-    <div class="close-row">
-      <button class="x" onclick="closeDirections()">Close</button>
+<footer>
+  <div class="container footer-row">
+    <div>© <span id="y"></span> Placeholder Barber Lounge</div>
+    <div class="footer-links">
+      <a href="book.html">Book</a>
+      <a href="contact.html">Contact</a>
     </div>
   </div>
-</div>
+</footer>
 
-<script src="script.js"></script>
+<script>
+  document.getElementById("y").textContent = new Date().getFullYear();
+  const btn = document.getElementById("menuBtn");
+  const nav = document.getElementById("nav");
+  btn.addEventListener("click", () => nav.classList.toggle("open"));
+
+  function openDirections(address){
+    const encoded = encodeURIComponent(address);
+    const isApple = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+    if(isApple){
+      window.location.href = `maps://?q=${encoded}`;
+    } else {
+      window.open(`https://www.google.com/maps/search/?api=1&query=${encoded}`, "_blank");
+    }
+  }
+</script>
 </body>
 </html>
