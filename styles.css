@@ -385,4 +385,46 @@ footer{
   }
   nav.open{ display:flex; }
   nav a{ width: 100%; }
+   /* =========================
+   HOME HERO BACKGROUND
+   ========================= */
+
+.hero-bg{
+  /* use the first image as the background */
+  background:
+    linear-gradient(180deg, rgba(0,0,0,.55), rgba(0,0,0,.78)),
+    url("https://images.unsplash.com/photo-1520975661595-6453be3f7070?auto=format&fit=crop&w=2000&q=80");
+  background-size: cover;
+  background-position: center;
+  padding: 84px 0 64px;
+}
+
+.hero-center{
+  display:flex;
+  justify-content:center;   /* centers horizontally */
+  align-items:center;       /* centers vertically */
+  min-height: 70vh;         /* makes it feel like a real hero */
+}
+
+.hero-overlay{
+  width: min(760px, 92vw);
+  text-align: center;       /* centers the text */
+  padding: 30px;
+  border-radius: 26px;
+  background: rgba(10,10,10,.70);
+  border: 1px solid rgba(255,255,255,.12);
+  backdrop-filter: blur(10px);
+}
+
+/* center the buttons/badges too */
+.hero-overlay .actions{
+  justify-content:center;
+}
+.hero-overlay .badge-row{
+  justify-content:center;
+}
+.hero-overlay .lead{
+  margin-left:auto;
+  margin-right:auto;
+}
 }
