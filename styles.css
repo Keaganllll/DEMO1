@@ -927,3 +927,39 @@ body{
   .hero-actions{ gap: 12px; }
   .hero-main-btn, .hero-secondary-btn{ width: min(320px, 92vw); }
 }
+/* Sticky mobile action bar */
+.sticky-bar {
+  position: fixed;
+  left: 12px;
+  right: 12px;
+  bottom: 12px;
+  z-index: 9999;
+  display: none;
+  gap: 10px;
+  padding: 10px;
+  border-radius: 16px;
+  background: rgba(15,15,15,0.9);
+  border: 1px solid rgba(255,255,255,0.15);
+  backdrop-filter: blur(10px);
+}
+
+.sticky-btn {
+  flex: 1;
+  padding: 12px;
+  text-align: center;
+  font-weight: 600;
+  border-radius: 12px;
+  color: #fff;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.18);
+  text-decoration: none;
+}
+
+.sticky-btn:active {
+  transform: translateY(1px);
+}
+
+@media (max-width: 900px) {
+  body { padding-bottom: 90px; }
+  .sticky-bar { display: flex; }
+}
